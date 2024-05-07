@@ -13,4 +13,11 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    public function test_failure_math_operation() {
+        $a = 10;
+        $b = 20;
+        $jumlah = $a + $b;
+        $this->assertTrue($jumlah > 20);
+    }
 }
