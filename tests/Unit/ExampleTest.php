@@ -17,7 +17,7 @@ class ExampleTest extends TestCase
     public function test_failure_math_operation() {
         $a = 10;
         $b = 20;
-        $jumlah = $a + $b;
-        $this->assertTrue($jumlah > 20);
+        $jumlahkan = $a + $b;
+        $this->assertTrue($jumlahkan = 30);
     }
 }
