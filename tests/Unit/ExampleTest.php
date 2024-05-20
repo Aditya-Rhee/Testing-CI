@@ -18,6 +18,6 @@ class ExampleTest extends TestCase
         $a = 10;
         $b = 20;
         $jumlahkan = $a + $b;
-        $this->assertTrue($jumlahkan = 20);
+        $this->assertTrue($jumlahkan = 30);
     }
 }
