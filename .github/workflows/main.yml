@@ -39,7 +39,7 @@ jobs:
 
       # - name: Install Breeze
       #   run: php artisan breeze:install --no-interaction
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -82,7 +82,7 @@ jobs:
 
       # - name: Install Breeze
       #   run: php artisan breeze:install --no-interaction
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -96,3 +96,20 @@ jobs:
 
       - name: Run tests
         run: ./vendor/bin/phpunit
+
+  notification:
+    name: Notification
+    runs-on: ubuntu-latest
+    needs:
+      - laravel_build
+      - laravel_test
+
+    if: always()
+    steps:
+      - name: Notify success or failure
+        run: |
+          if [[ "${{ needs.laravel_build.result }}" == "success" && "${{ needs.laravel_test.result }}" == "success" ]]; then
+            echo "Sukses"
+          else
+            echo "Gagal"
+          fi
